@@ -1,91 +1,45 @@
-# Optical Character Recognition (OCR) Project
+# Energy Consumption Prediction using Time Series Forecasting
 
-## Overview
+## Project Overview
+This project aims to predict energy consumption using time series forecasting techniques. The goal is to develop a model that can accurately forecast future energy consumption based on historical data. The project leverages machine learning models implemented in Python.
 
-This project aims to provide Optical Character Recognition (OCR) capabilities to users, allowing them to upload an image containing text and extract the characters or text from it. Additionally, it offers the functionality for users to choose the preferred area of the uploaded image to perform OCR, providing flexibility and accuracy.
-
-## Features
-
-1. **Image Upload**: Users can upload an image containing text.
-2. **Select Preferred Area**: Users have the option to select the area of the uploaded image from which they want to extract text.
-3. **Text Extraction**: The system processes the uploaded image and extracts the text using OCR algorithms.
-4. **Output Display**: The extracted text is displayed to the user for review or further processing.
-
-## Getting Started
-
-## Initial Requirements
-Install the below requirments
-1. Anaconda: Donwload Link (https://www.anaconda.com/download/success)
-2. Python: Download Link (https://www.python.org/downloads/)
-3. Tessaract: Download Link 
-(For windows: https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.3.3.20231005.exe
-Other OS: https://tesseract-ocr.github.io/tessdoc/Compiling.html)
-
-## Edit Environment Variable path
-
-For Windows machine, after Installing the Python and Tessaract edit the enviroment varaible and include the python and tessaract application paths to the sytem variable.
- 
-
-To run this project locally, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Create the environment
+## Installation
+Clone the repository:
 
 ```bash
-conda env create -f environment.yml
+git clone https://github.com/Gayathri-Selvaganapathi/energy_consumption_prediction.git
+cd energy_consumption_prediction
 ```
 
-3. Activate the environment 
+## File Structure
+1. app.py: The main script for running the energy consumption prediction model. This script handles data preprocessing, model training, and predictions.
+
+2.time-series-forecasting-with-machine-learning.ipynb: A Jupyter Notebook that provides a detailed walkthrough of the time series forecasting process, including data exploration, model building, and evaluation.
+
+## Requirements
+To run this project, you'll need to install the following dependencies:
 
 ```bash
-conda activate env_ocr  
+
+pip install -r requirements.txt
 ```
+Make sure your environment is set up with the following packages:
 
-4. Updatin the activated Environment
+## Data Preparation
+The data for this time series prediction is downloaded from Kaggle (https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption) 
+The data used for this project should be in a time series format, with timestamps and corresponding energy consumption values. The dataset is preprocessed to handle missing values, outliers, and other anomalies before being fed into the forecasting models.
 
-```bash
-conda env update -f environment.yml --prune
-```
+# Model Training
+The model training involves the following steps:
 
-5. Run the application by executing the below command.
+The model training process is detailed in the time-series-forecasting-with-machine-learning.ipynb file. The project primarily uses the XGBoost algorithm for predicting energy consumption. Different time series data formats and feature engineering techniques can be explored to potentially improve the model's accuracy.
+
+## Running the Application
+To run the application locally:
+
+Ensure all dependencies are installed.Run the streamlt using below command
 
 ```bash
 streamlit run app.py
 ```
-
-5. Access the application through the web browser at `http://localhost:8501`.
-
-## Usage
-
-1. **Upload Image**: Click on the upload button and select an image file containing text.
-2. **Select Preferred Area**: If desired, use the bounding to select the preferred area of the uploaded image.
-3. **Extract Text**: Click on the "Convert Text" button to initiate the OCR process.
-4. **View Output**: The extracted text will be displayed on the screen.
-
-## Technologies Used
-
-- **Python**: The primary programming language used for backend development.
-- **Streamlit**: A lightweight web framework used for building the web application.
-- **pytesseract**: An OCR engine used for recognizing text within images.
-- **GoogleTranslate**: A free and unlimited python library used to translate the text to deseired Languages.
-
-## Google Transalate Supported Languages
-
-https://py-googletrans.readthedocs.io/en/latest/
-
-## Tessaract Supported Languages
-
-https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgements
-
-- Special thanks to the developers of Streamlit and Tesseract for their excellent libraries and documentation.
-- This project was inspired by the need for easy-to-use OCR tools for various applications.
+This will start a local server where you can interact with the model through a simple streamlit GUI.
